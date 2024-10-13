@@ -12,13 +12,14 @@ const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites
 ---
 
 <a href={`/pokemon/${name}`} class:list={[
-    "flex flex-col border-white items-center p-2 gap-4",
+    "flex flex-col border-white items-center p-1 gap-4",
     !isbig && 'border rounded-xl'
 ]}>
     <img
+    transition:name={`${name}-name`}
     class:list={[
         'w-26 h-26',
-        !isbig && 'w-16 h-16'
+        !isbig && 'w-22 h-22'
     ]}
     src={imgSrc} 
     alt={name}/>
