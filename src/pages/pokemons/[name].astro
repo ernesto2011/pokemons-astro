@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import Card from "@components/Card.astro";
 import type { PokemonListResponse } from "@interfaces/pokemon-list-response";
+import Title from "@components/shared/Title.astro";
 export const getStaticPaths = (async () => {
   const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
   const { results } = (await resp.json()) as PokemonListResponse;
@@ -26,8 +27,8 @@ const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites
 >
   <section class="mt-10 mx-10 flex flex-col justify-center items-center">
     <div>
-      <a href="/" class="text-blue-500 hover:underline">Regresar</a>
-      <h1 class="text-3xl capitalize">{name}</h1>
+      <button class="text-blue-500" onclick="history.back()">Regresar</button>
+      <Title>{name}</Title>
     </div>
     <Card name={name} url={url} isbig />
     <audio controls class="mt-5">
