@@ -7,11 +7,12 @@ interface Props {
 const {name, url, isbig=false}= Astro.props;
 const parts = url.split('/');
 const number = parts[parts.length - 2];
+const id= number
 const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${number}.png`
 
 ---
 
-<a href={`/pokemon/${name}`} class:list={[
+<a href={`/pokemons/${name}`} class:list={[
     "flex flex-col border-white items-center p-1 gap-4",
     !isbig && 'border rounded-xl'
 ]}>
