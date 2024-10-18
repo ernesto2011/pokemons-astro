@@ -10,7 +10,7 @@ const data = await resp.json() as PokemonListResponse
 
 	<MainLayout title="Home">
 		<Title>Pokemons</Title>
-		<section aria-label="Listado de Pokemons" class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 p-4">
+		<section aria-label="Listado de Pokemons" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 p-4">
 			{
 				data.results.map((pokemon)=>(
 					<Card name={pokemon.name} url={pokemon.url}/>

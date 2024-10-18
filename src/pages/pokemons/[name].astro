@@ -45,10 +45,11 @@ const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites
 </MainLayout>
 
 <script>
-  interface FavoritePokemon {
-    name: string;
-    id: string
-  }
+  import type { FavoritePokemon } from "@interfaces/favorite-pokemon";
+  // interface FavoritePokemon {
+  //   name: string;
+  //   id: string
+  // }
   const handlePageLoad =() =>{
     let favoritePokemons: FavoritePokemon[] = JSON.parse(localStorage.getItem('favorites')?? '[]');
     const btnFavorite= document.querySelector('#btn-favorite') as HTMLButtonElement
