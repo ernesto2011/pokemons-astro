@@ -7,7 +7,6 @@ interface Props {
 const {name, url, isbig=false}= Astro.props;
 const parts = url.split('/');
 const number = parts[parts.length - 2];
-const id= number
 const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${number}.png`
 
 ---
@@ -19,7 +18,7 @@ const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites
     <img
     transition:name={`${name}-name`}
     class:list={[
-        'w-24 h-24',
+        'w-26 h-26',
         !isbig && 'w-22 h-22'
     ]}
     src={imgSrc} 

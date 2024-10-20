@@ -79,7 +79,7 @@ const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites
         favoritePokemons = favoritePokemons.filter(fav => fav.name !== name);
       }else{
         favoritePokemons.push({
-          id: id,
+          id: +id,
           name: name
         })
       }
