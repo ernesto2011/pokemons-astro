@@ -15,10 +15,10 @@ export const Counter: Component<Props> = (props) => {
    <h3>Value:{counter()} </h3>
 
    <button 
-   onClick={()=>setCounter((prev)=> ++prev)}
+   onClick={()=>setCounter((prev=0)=> ++prev)}
    class="bg-blue-500 p-2 mr-2 rounded">+1</button>
    <button
-   onClick={()=>setCounter((prev)=> --prev)}
+   onClick={()=>setCounter((prev=0)=> --prev)}
    class="bg-blue-500 p-2 mr-2 rounded">-1</button>
    </>
   )
